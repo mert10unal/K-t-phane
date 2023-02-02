@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{E80D1F28-F3CF-4439-9CD4-E50D1B8C365A}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.BEŞİKTAŞ_220KÜTÜPHANE PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BEŞİKTAŞ KÜTÜPHANE/Section.cs">
+    <Files>
+      <File FileName="BEŞİKTAŞ KÜTÜPHANE/Program.cs" />
+      <File FileName="BEŞİKTAŞ KÜTÜPHANE/Section.cs" Line="17" Column="1" />
+      <File FileName="BEŞİKTAŞ KÜTÜPHANE/Worker.cs" />
+      <File FileName="BEŞİKTAŞ KÜTÜPHANE/LibraryFloor.cs" />
+      <File FileName="BEŞİKTAŞ KÜTÜPHANE/Episode.cs" />
+      <File FileName="BEŞİKTAŞ KÜTÜPHANE/Book.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BEŞİKTAŞ KÜTÜPHANE" expanded="True">
+            <Node name="BEŞİKTAŞ KÜTÜPHANE" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
