@@ -1,5 +1,19 @@
 # Library
 
+The problems to solve about the library database are listed belove : 
+
+Design the database of Kadıköy Anatolian High School.
+  The courses in the school have name, code, importance level.
+  There are teachers, teachers' name, surname, branch, phone number, has a title.
+  There are students, there are students' name, surname, class, identity number, age
+  The class has the name of the class, its capacity and its president (a normal student-type
+  variable?) are there are there are.
+  Each class has lessons.
+  One lesson can be taught by more than one teacher.
+  Students can be in one class.
+  There are teachers in the classroom.
+  Homework is given at school. Assignments have a name, code and due date. 
+  An assignment can be given to many classes. One teacher prepares the assignment and assigns it to many classes.
 
 
 The project includes library database schema, which contains relationship with the picture belove : 
