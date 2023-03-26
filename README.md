@@ -23,3 +23,45 @@ The project includes library database schema, which contains relationship with t
 An example of n-n relation is shown belove : 
 
 ![Bildschirmfoto 2023-02-02 um 15 08 01](https://user-images.githubusercontent.com/120198895/216320583-ef302a9a-a14e-4fff-80a5-f130c92d1f43.png)
+
+Bu tasarım doğrultusunda ihtiyacım olan sorulara cevap veren bazı sorgular :
+
+-- İsmi efe olan workerların book sectionları
+select BookSectionName from Worker,Section,BookSection
+where Worker.Id=Section.WorkerId
+and Section.Id = BookSection.SectionId
+and Worker.WorkerName = 'Efe'
+
+
+
+--İsmi efe olan workerların epsiodları
+select EpisodeName 
+from Worker,Section,BookSection,Book,Episode
+where Worker.Id=Section.WorkerId
+and Section.Id = BookSection.SectionId
+and BookSection.BookId=Book.Id
+and Book.Id=Episode.BookId
+and WorkerName = 'Efe' 
+
+--İsmi efe olan workerların libraryFloor u 
+select FloorType from Worker,Section,LibraryFloor
+where Worker.Id=Section.WorkerId
+and Section.FloorId = LibraryFloor.Id
+and Nickname = 'Economy'
+
+--Epsiodu ‘x’ olan (x farazi bişe) epsiode un worker name i ve wage i
+select WorkerName,Salary from Episode,Book,BookSection,Section,Worker
+where Worker.Id=Section.WorkerId
+and Section.Id = BookSection.SectionId
+and BookSection.BookId=Book.Id
+and Book.Id=Episode.BookId
+and EpisodeName = 'Sonbahar'
+select * from Episode
+
+--Library floor nick name ‘x’ olan (x farazi bişe) library floorun book
+--namelari nedir.
+select BookTitle from LibraryFloor,Section,BookSection,Book
+where LibraryFloor.Id=Section.FloorId
+and Section.Id=BookSection.SectionId
+and Book.Id=BookSection.BookId
+and Nickname = 'Science'
