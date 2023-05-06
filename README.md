@@ -26,7 +26,7 @@ An example of n-n relation is shown belove :
 
 Bu tasarım doğrultusunda ihtiyacım olan sorulara cevap veren bazı sorgular :
 
--- İsmi efe olan workerların book sectionları
+-- Book sections of workers whose name is 'efe'
 select BookSectionName from Worker,Section,BookSection
 where Worker.Id=Section.WorkerId
 and Section.Id = BookSection.SectionId
@@ -34,7 +34,7 @@ and Worker.WorkerName = 'Efe'
 
 
 
---İsmi efe olan workerların epsiodları
+--Episodes of workers named efe
 select EpisodeName 
 from Worker,Section,BookSection,Book,Episode
 where Worker.Id=Section.WorkerId
@@ -43,13 +43,13 @@ and BookSection.BookId=Book.Id
 and Book.Id=Episode.BookId
 and WorkerName = 'Efe' 
 
---İsmi efe olan workerların libraryFloor u 
+--LibraryFloor of workers named efe 
 select FloorType from Worker,Section,LibraryFloor
 where Worker.Id=Section.WorkerId
 and Section.FloorId = LibraryFloor.Id
 and Nickname = 'Economy'
 
---Epsiodu ‘x’ olan (x farazi bişe) epsiode un worker name i ve wage i
+--The worker name and sary of the episode with episode name 'x'
 select WorkerName,Salary from Episode,Book,BookSection,Section,Worker
 where Worker.Id=Section.WorkerId
 and Section.Id = BookSection.SectionId
@@ -58,8 +58,7 @@ and Book.Id=Episode.BookId
 and EpisodeName = 'Sonbahar'
 select * from Episode
 
---Library floor nick name ‘x’ olan (x farazi bişe) library floorun book
---namelari nedir.
+--Book names of library floor with library floor nick name 'x'
 select BookTitle from LibraryFloor,Section,BookSection,Book
 where LibraryFloor.Id=Section.FloorId
 and Section.Id=BookSection.SectionId
