@@ -24,7 +24,7 @@ An example of n-n relation is shown belove :
 
 ![Bildschirmfoto 2023-02-02 um 15 08 01](https://user-images.githubusercontent.com/120198895/216320583-ef302a9a-a14e-4fff-80a5-f130c92d1f43.png)
 
-Bu tasarım doğrultusunda ihtiyacım olan sorulara cevap veren bazı sorgular :
+In line with this design, some datas that answer the questions I need:
 
 -- Book sections of workers whose name is 'efe'
 select BookSectionName from Worker,Section,BookSection
