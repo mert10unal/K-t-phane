@@ -74,6 +74,41 @@ SectionId int,
 FOREIGN KEY(BookId) REFERENCES Book(Id),
 FOREIGN KEY(SectionId) REFERENCES Section(Id)
 );
+insert into Book(BookTitle,Author,PageNumber,PublishDate)values ('Tutunamayanlar','Oğuz Atay',483,'2006-09-12')
+insert into Book(BookTitle,Author,PageNumber,PublishDate)values ('İnsan Ne İle Yaşar','Tolstoy',273,'1885-06-22')
+insert into Book(BookTitle,Author,PageNumber,PublishDate)values ('Savaş ve Barış','Dostoyevski',500,'1923-07-10')
+insert into Book(BookTitle,Author,PageNumber,PublishDate)values ('En Mavi Göz','Oğuz Atay',483,'2006-09-12')
+insert into Book(BookTitle,Author,PageNumber,PublishDate)values ('Cadı Kazanı','Arthur Miller',198,'1940-11-23')
+
+insert into Worker(WorkerName,Surname,PhoneNumber,Salary) values ('Mert','Ünal','5335246062',9000)
+insert into Worker(WorkerName,Surname,PhoneNumber,Salary) values ('Efe','Taycı','5346751025',8500)
+insert into Worker(WorkerName,Surname,PhoneNumber,Salary) values ('Efe','Keskin','5335246062',10000)
+insert into Worker(WorkerName,Surname,PhoneNumber,Salary) values ('Serhat','Ünal','5334659007',5000)
+insert into Worker(WorkerName,Surname,PhoneNumber,Salary) values ('Ege','Perçinel','5324063514',7500)
+
+insert into LibraryFloor(Area,FloorType,Capacity,Nickname) values (870.25,'wood',650,'Science')
+insert into LibraryFloor(Area,FloorType,Capacity,Nickname) values (900,'marble',500,'Language')
+insert into LibraryFloor(Area,FloorType,Capacity,Nickname) values (1600.5,'marble',450,'Social Studies')
+insert into LibraryFloor(Area,FloorType,Capacity,Nickname) values (1200,'wood',250,'Mathematics')
+insert into LibraryFloor(Area,FloorType,Capacity,Nickname) values (2200,'marble',300,'Economy')
+
+insert into Episode(EpisodeName,BookId) values ('Oğuz Atay Maceraları',1)
+insert into Episode(EpisodeName,BookId) values ('Efendi İle Uşak',2)
+insert into Episode(EpisodeName,BookId) values ('Oğuz Atay Maceraları',3)
+insert into Episode(EpisodeName,BookId) values ('Sonbahar',4)
+insert into Episode(EpisodeName,BookId) values ('Piyer Bozukof ve Nikolay Rustof',5)
+
+insert into Section(SectionName,FloorId,WorkerId) values ('1',1,2)
+insert into Section(SectionName,FloorId,WorkerId) values ('10',3,5)
+insert into Section(SectionName,FloorId,WorkerId) values ('5',4,4)
+insert into Section(SectionName,FloorId,WorkerId) values ('3',5,1)
+insert into Section(SectionName,FloorId,WorkerId) values ('20',2,3)
+
+insert into BookSection(BookSectionName,BookId) values ('Başlangıç',3)
+insert into BookSection(BookSectionName,BookId) values ('Sonbahar',4)
+insert into BookSection(BookSectionName,BookId) values ('Aşk Maceraları',1)
+insert into BookSection(BookSectionName,BookId) values ('Ayrılık',5)
+insert into BookSection(BookSectionName,BookId) values ('Mahkeme Başlıyor',2)
 
 In line with this design, some datas that answer the questions I need:
 
@@ -82,8 +117,6 @@ select BookSectionName from Worker,Section,BookSection
 where Worker.Id=Section.WorkerId
 and Section.Id = BookSection.SectionId
 and Worker.WorkerName = 'Efe'
-
-
 
 --Episodes of workers named efe
 select EpisodeName 
