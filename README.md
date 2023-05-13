@@ -24,6 +24,57 @@ An example of n-n relation is shown belove :
 
 ![Bildschirmfoto 2023-02-02 um 15 08 01](https://user-images.githubusercontent.com/120198895/216320583-ef302a9a-a14e-4fff-80a5-f130c92d1f43.png)
 
+The codes of the library database : 
+
+create table Worker(
+Id int primary key GENERATED ALWAYS AS IDENTITY,
+WorkerName character varying (100),
+Surname character varying (100),
+PhoneNumber character varying(10),
+Salary float
+);
+
+create table Book(
+Id int primary key GENERATED ALWAYS AS IDENTITY,
+BookTitle character varying(100),
+Author character varying(100),
+PageNumber int,
+PublishDate date
+);
+
+create table Episode(
+Id int primary key GENERATED ALWAYS AS IDENTITY,
+EpisodeName character varying(100),
+BookId int,
+FOREIGN KEY (BookId) REFERENCES Book(Id)
+);
+
+create table Section(
+Id int primary key GENERATED ALWAYS AS IDENTITY,
+SectionName character varying(100),
+FloorId int,
+WorkerId int,
+FOREIGN KEY (FloorId) REFERENCES LibraryFloor(Id),
+FOREIGN KEY (WorkerId) REFERENCES Worker(Id)
+);
+
+create table LibraryFloor(
+Id int primary key GENERATED ALWAYS AS IDENTITY,
+Area float,
+FloorType character varying(50),
+Capacity int,
+Nickname character varying(100)
+);
+
+create table BookSection(
+Id int primary key GENERATED ALWAYS AS IDENTITY,
+BookSectionName character varying(100),
+BookId int,
+SectionId int,
+FOREIGN KEY(BookId) REFERENCES Book(Id),
+FOREIGN KEY(SectionId) REFERENCES Section(Id)
+);
+
 In line with this design, some datas that answer the questions I need:
 
 -- Book sections of workers whose name is 'efe'
