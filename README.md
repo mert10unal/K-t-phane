@@ -74,6 +74,7 @@ SectionId int,
 FOREIGN KEY(BookId) REFERENCES Book(Id),
 FOREIGN KEY(SectionId) REFERENCES Section(Id)
 );
+
 insert into Book(BookTitle,Author,PageNumber,PublishDate)values ('Tutunamayanlar','Oğuz Atay',483,'2006-09-12')
 insert into Book(BookTitle,Author,PageNumber,PublishDate)values ('İnsan Ne İle Yaşar','Tolstoy',273,'1885-06-22')
 insert into Book(BookTitle,Author,PageNumber,PublishDate)values ('Savaş ve Barış','Dostoyevski',500,'1923-07-10')
